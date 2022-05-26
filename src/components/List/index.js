@@ -1,6 +1,9 @@
-export function List() {
+import "./style.css";
+
+export function EmployeeList(props) {
+  const { items } = props;
   return (
-    <table id="datatablesSimple">
+    <table className="table-bordered">
       <thead>
         <tr>
           <th>Name</th>
@@ -22,14 +25,16 @@ export function List() {
         </tr>
       </tfoot>
       <tbody>
-        <tr>
-          <td>Tiger Nixon</td>
-          <td>System Architect</td>
-          <td>Edinburgh</td>
-          <td>61</td>
-          <td>2011/04/25</td>
-          <td>$320,800</td>
-        </tr>
+        {(items || []).map((item) => (
+          <tr key={item.name}>
+            <td>{item.name}</td>
+            <td>{item.position}</td>
+            <td>{item.office}</td>
+            <td>{item.age}</td>
+            <td>{item.startDate}</td>
+            <td>{item.salary}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

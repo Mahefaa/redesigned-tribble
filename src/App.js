@@ -2,11 +2,21 @@ import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
 import { Breadcrumb } from "./components/Breadcrumb";
-import { List } from "./components/List";
+import { EmployeeList } from "./components/List";
 import { Footer } from "./components/Footer";
 import { Card } from "./components/Card";
+import { faker } from "@faker-js/faker";
 
 function App() {
+  const employees = new Array(15).fill(null).map((_) => ({
+    name: faker.name.findName(),
+    position: faker.company.bsNoun(),
+    office: faker.address.cityName(),
+    age: faker.random.numeric(2),
+    startDate: faker.date.past(3).getUTCDate(),
+    salary: faker.random.numeric(6),
+  }));
+
   return (
     <div className="sb-nav-fixed">
       <Navbar />
@@ -29,7 +39,7 @@ function App() {
                 .
               </Card>
               <Card title="DataTable Example">
-                <List />
+                <EmployeeList items={employees} />
               </Card>
             </div>
           </main>

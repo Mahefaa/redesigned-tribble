@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  padding: 0.25rem;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+table td:nth-child(1),
+table th:nth-child(1) {
+  width: 19%;
+}
+table td:nth-child(2),
+table th:nth-child(2) {
+  width: 29%;
+}
+
+table td:nth-child(3),
+table th:nth-child(3) {
+  width: 15%;
+}
+
+table td:nth-child(4),
+table th:nth-child(4) {
+  width: 8%;
+}
+
+table td:nth-child(5),
+table th:nth-child(5) {
+  width: 15%;
+}
+
+table td:nth-child(6),
+table th:nth-child(6) {
+  width: 11%;
+}
+
+.colspaned {
+  width: 100%;
+  text-align: center;
+}
