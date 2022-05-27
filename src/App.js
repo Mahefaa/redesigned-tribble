@@ -6,6 +6,7 @@ import { EmployeeList } from "./components/List";
 import { Footer } from "./components/Footer";
 import { Card } from "./components/Card";
 import { faker } from "@faker-js/faker";
+import { useState } from "react";
 
 function App() {
   const employees = new Array(15).fill(null).map((_) => ({
@@ -17,9 +18,19 @@ function App() {
     salary: faker.random.numeric(6),
   }));
 
+  const [sidebarClass, setSidebarClass] = useState("sb-nav-fixed");
+
+  function toggleSidebarClass() {
+    setSidebarClass(
+      sidebarClass.includes("toggled")
+        ? "sb-nav-fixed"
+        : "sb-nav-fixed sb-sidenav-toggled"
+    );
+  }
+
   return (
-    <div className="sb-nav-fixed">
-      <Navbar />
+    <div className={sidebarClass}>
+      <Navbar toggleSidebarClass={toggleSidebarClass} />
       <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
           <Sidebar />
