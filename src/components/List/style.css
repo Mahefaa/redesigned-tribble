@@ -2,6 +2,7 @@ table {
   width: 100%;
   caption-side: bottom;
   border-collapse: collapse;
+  margin-bottom: 1rem;
 }
 
 table td,
