@@ -14,7 +14,7 @@ function App() {
     position: faker.company.bsNoun(),
     office: faker.address.cityName(),
     age: faker.random.numeric(2),
-    startDate: faker.date.past(3).getUTCDate(),
+    startDate: new Date().toISOString().split("T")[0],
     salary: faker.random.numeric(6),
   }));
 
