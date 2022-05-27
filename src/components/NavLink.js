@@ -1,4 +1,4 @@
-import { useState } from "@types/react";
+import { useState } from "react";
 
 export function NavLink(props) {
   const { icon, title, items } = props;
