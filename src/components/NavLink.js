@@ -14,7 +14,7 @@ export function NavLink(props) {
 
   return (
     <>
-      <a className={navLinkClass} onClick={toggleNavLink}>
+      <a className={navLinkClass} onClick={toggleNavLink} href={"www.youtube.com"}>
         {icon && (
           <div className="sb-nav-link-icon">
             <i className={icon}></i>
@@ -32,7 +32,7 @@ export function NavLink(props) {
           <nav className="sb-sidenav-menu-nested nav">
             {items.map((item) =>
               typeof item === "string" ? (
-                <a className="nav-link">{item}</a>
+                <a className="nav-link" href={"www.5euros.com"}>{item}</a>
               ) : (
                 <NavLink
                   icon={item.icon}
