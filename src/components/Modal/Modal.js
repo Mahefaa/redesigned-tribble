@@ -15,7 +15,11 @@ export default function Modal(props){
 return (
     <div className={"touchable"} onMouseLeave={()=>{
         window.addEventListener("click",onClick);
-    }}>
+    }}
+    onMouseEnter={()=>{
+        window.removeEventListener("click",onClick);
+    }}
+    >
         <form id={"formID"} >
             <h3>Formulaire de type {method}</h3>
             <p>*placeholder values are taken by input after no input and blur*</p>
@@ -33,6 +37,7 @@ return (
                         }}
                         onChange={(event)=>{
                             formData[e]=event.currentTarget.value;
+                            data[3]=formData[e];
                         }}
                         />
                     )
@@ -46,6 +51,7 @@ return (
             <button type={"reset"} className={"btn btn-danger"}>reset</button>
             <button type="reset" className={"btn btn-danger"} onClick={()=>setShowModal(false)}>Exit</button>
         </form>
+
     </div>
 )
 }
