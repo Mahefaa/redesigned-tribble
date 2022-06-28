@@ -47,8 +47,8 @@ export function EmployeeList(props) {
               </tr>
             </tfoot>
             <tbody>
-              {(items || []).map((item,i) => (
-                <tr key={i} onClick={()=>{
+              {(items || []).map((item) => (
+                <tr key={`${item.id}-${item.name}`} onClick={()=>{
                   setData(item);
                   setMethod("put");
                   setShowModal(true);
