@@ -1,0 +1,28 @@
+#formID{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    z-index: 999;
+    background-color:grey;
+    width: 80vw;
+    height: 80vh;
+    opacity: 0.95;
+}
+#formId:hover{
+    cursor: cell;
+}
+#formID input[type="text"]{
+    width: 50%;
+    border-block-color: black;
+    margin: 5px;
+}
+.btn{
+    width: 100px !important;
+    margin: 10px !important;
+}
