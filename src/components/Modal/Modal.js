@@ -31,7 +31,7 @@ return (
                     return (
                         <input type={"text"} placeholder={e} onBlur={(event)=> {
                             if(event.currentTarget.value.trim()===""){
-                                event.currentTarget.value=e.currentTarget.placeholder;
+                                event.currentTarget.value=event.currentTarget.placeholder;
                                 formData[e]=event.currentTarget.value;
                             }
                         }}
