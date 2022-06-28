@@ -39,7 +39,9 @@ return (
                 })
             }
             <button type={"submit"} className={"btn btn-primary"} formAction={method} onClick={(e)=> {
+                e.preventDefault()
                 axios[method](url,formData).then((response)=>console.log(response)).catch((error)=>console.error(error));
+                setShowModal(false);
             }}>{method==="post"?"add":"update"}</button>
             <button type={"reset"} className={"btn btn-danger"}>reset</button>
             <button type="reset" className={"btn btn-danger"} onClick={()=>setShowModal(false)}>Exit</button>
